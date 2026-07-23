@@ -58,3 +58,17 @@ O jogo é desenhado em um elemento `<canvas>`. A atualização dos movimentos e 
 O ângulo de retorno da bola depende do ponto em que ela atinge a raquete, tornando as partidas mais dinâmicas.
 
 ## Projeto para estudo
+
+Durante o desenvolvimento deste projeto, foram estudados e aplicados os seguintes conteúdos de Engenharia de Software:
+
+### 1. Separação de responsabilidades
+
+O projeto foi dividido em arquivos com responsabilidades específicas: o `index.html` define a estrutura da interface, o `style.css` cuida da apresentação e da responsividade, e o `script.js` concentra as regras e o comportamento do jogo. No JavaScript, funções como `drawGame`, `updateGame` e `configureDifficulty` também separam a renderização, a atualização da partida e as configurações.
+
+### 2. Gerenciamento de estado
+
+O estado da partida é representado por objetos e variáveis que armazenam posições, velocidades, pontuação e situação do jogo. As funções `startGame`, `resetGame`, `checkWinner` e `openMenu` controlam as transições entre menu, partida em andamento e fim de jogo, mantendo o comportamento da aplicação organizado e previsível.
+
+### 3. Laço de jogo e detecção de colisões
+
+O jogo utiliza `requestAnimationFrame` para executar continuamente as etapas de atualização e renderização. A cada quadro, o sistema processa os controles, movimenta a bola e as raquetes, verifica colisões e atualiza o placar. A lógica foi dividida em funções menores, como `hasCollision`, `handlePaddleCollision` e `scorePoint`, facilitando a leitura, a manutenção e a evolução do código.
