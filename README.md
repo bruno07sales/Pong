@@ -30,16 +30,7 @@ Uma versão responsiva do clássico jogo Pong, desenvolvida com HTML, CSS e Java
 | Reiniciar após o fim | `Espaço` ou botão **Jogar novamente** | Botão **Jogar novamente** |
 | Voltar ao menu | `Esc` ou botão **Menu** | Botão **Menu** |
 
-## Como executar
 
-O projeto não possui dependências ou etapa de compilação. Clone o repositório e abra o arquivo `index.html` em um navegador:
-
-```bash
-git clone <URL-DO-REPOSITORIO>
-cd Pong
-```
-
-Também é possível executá-lo com um servidor local, como a extensão **Live Server** do Visual Studio Code.
 
 ## Tecnologias
 
@@ -65,3 +56,5 @@ Pong/
 O jogo é desenhado em um elemento `<canvas>`. A atualização dos movimentos e a renderização são realizadas continuamente com `requestAnimationFrame`. A raquete adversária acompanha a posição vertical da bola, e sua velocidade varia de acordo com a dificuldade selecionada.
 
 O ângulo de retorno da bola depende do ponto em que ela atinge a raquete, tornando as partidas mais dinâmicas.
+
+## Projeto para estudo
