@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    >
+
+    <title>Pong Responsivo</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main class="game-container">
+        <header class="game-header">
+            <h1>Pong</h1>
+
+            <button id="menuButton" class="secondary-button hidden">
+                Menu
+            </button>
+        </header>
+
+        <section class="canvas-container">
+            <canvas
+                id="gameCanvas"
+                width="800"
+                height="500"
+                aria-label="Jogo Pong"
+            ></canvas>
+
+            <div id="gameMessage" class="game-message hidden">
+                <h2 id="messageTitle">Fim de jogo</h2>
+                <p id="messageText"></p>
+
+                <button id="restartButton" class="primary-button">
+                    Jogar novamente
+                </button>
+
+                <button id="returnMenuButton" class="secondary-button">
+                    Voltar ao menu
+                </button>
+            </div>
+        </section>
+
+        <section id="mobileControls" class="mobile-controls hidden">
+            <button
+                id="moveUpButton"
+                class="control-button"
+                aria-label="Mover raquete para cima"
+            >
+                ▲
+            </button>
+
+            <button
+                id="moveDownButton"
+                class="control-button"
+                aria-label="Mover raquete para baixo"
+            >
+                ▼
+            </button>
+        </section>
+
+        <p id="instructions" class="instructions hidden">
+            Celular: use os botões ▲ e ▼.
+            Computador: use W/S ou as setas.
+        </p>
+    </main>
+
+    <div id="mainMenu" class="menu-overlay">
+        <section class="menu-card">
+            <h2>Pong</h2>
+
+            <p>
+                Controle a raquete e seja o primeiro a marcar 5 pontos.
+            </p>
+
+            <label for="difficulty">Dificuldade</label>
+
+            <select id="difficulty">
+                <option value="easy">Fácil</option>
+                <option value="normal" selected>Normal</option>
+                <option value="hard">Difícil</option>
+            </select>
+
+            <button id="startButton" class="primary-button">
+                Iniciar jogo
+            </button>
+
+            <div class="menu-instructions">
+                <strong>Controles</strong>
+
+                <span>Celular: botões na tela</span>
+                <span>Computador: W/S ou setas</span>
+            </div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,320 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    min-height: 100%;
+    overscroll-behavior: none;
+}
+
+body {
+    min-height: 100vh;
+    min-height: 100dvh;
+
+    background: #111;
+    color: #fff;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 16px;
+
+    overflow: hidden;
+    touch-action: none;
+}
+
+button,
+select {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+    border: none;
+}
+
+.game-container {
+    width: min(100%, 900px);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    gap: 14px;
+}
+
+.game-header {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.game-header h1 {
+    font-size: clamp(1.5rem, 5vw, 2.5rem);
+}
+
+.canvas-container {
+    position: relative;
+
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+canvas {
+    display: block;
+
+    width: 100%;
+    height: auto;
+
+    max-height: 62dvh;
+
+    background: #000;
+
+    border: 3px solid #fff;
+    border-radius: 8px;
+
+    aspect-ratio: 8 / 5;
+
+    touch-action: none;
+}
+
+.menu-overlay {
+    position: fixed;
+    inset: 0;
+
+    z-index: 10;
+
+    background: rgba(0, 0, 0, 0.88);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+}
+
+.menu-card {
+    width: min(100%, 420px);
+
+    background: #1d1d1d;
+
+    border: 2px solid #fff;
+    border-radius: 16px;
+
+    padding: 28px;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 18px;
+
+    text-align: center;
+}
+
+.menu-card h2 {
+    font-size: 2.4rem;
+}
+
+.menu-card p {
+    color: #d5d5d5;
+    line-height: 1.5;
+}
+
+.menu-card label {
+    text-align: left;
+    font-weight: bold;
+}
+
+.menu-card select {
+    width: 100%;
+
+    padding: 12px;
+
+    color: #fff;
+    background: #2a2a2a;
+
+    border: 1px solid #777;
+    border-radius: 8px;
+}
+
+.primary-button,
+.secondary-button {
+    min-height: 48px;
+
+    padding: 12px 20px;
+
+    border-radius: 8px;
+
+    font-weight: bold;
+}
+
+.primary-button {
+    background: #fff;
+    color: #111;
+}
+
+.secondary-button {
+    background: #333;
+    color: #fff;
+
+    border: 1px solid #777;
+}
+
+.primary-button:active,
+.secondary-button:active,
+.control-button:active {
+    transform: scale(0.97);
+}
+
+.menu-instructions {
+    display: flex;
+    flex-direction: column;
+
+    gap: 6px;
+
+    color: #ccc;
+    font-size: 0.9rem;
+}
+
+.game-message {
+    position: absolute;
+    inset: 0;
+
+    background: rgba(0, 0, 0, 0.85);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    gap: 14px;
+
+    padding: 20px;
+
+    text-align: center;
+
+    border-radius: 8px;
+}
+
+.game-message h2 {
+    font-size: clamp(1.8rem, 6vw, 3rem);
+}
+
+.mobile-controls {
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+
+    gap: 18px;
+}
+
+.control-button {
+    width: min(42vw, 180px);
+    min-height: 68px;
+
+    background: #fff;
+    color: #111;
+
+    border-radius: 12px;
+
+    font-size: 2rem;
+    font-weight: bold;
+
+    user-select: none;
+    -webkit-user-select: none;
+
+    touch-action: none;
+}
+
+.instructions {
+    text-align: center;
+    color: #ccc;
+
+    font-size: 0.9rem;
+}
+
+.hidden {
+    display: none;
+}
+
+@media (min-width: 769px) {
+    .mobile-controls {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+
+    .game-container {
+        gap: 10px;
+    }
+
+    canvas {
+        max-height: 55dvh;
+    }
+
+    .menu-card {
+        padding: 22px;
+    }
+}
+
+@media (max-height: 650px) and (orientation: landscape) {
+    body {
+        align-items: flex-start;
+        overflow-y: auto;
+    }
+
+    .game-header {
+        display: none;
+    }
+
+    .game-container {
+        gap: 6px;
+    }
+
+    canvas {
+        width: auto;
+        max-width: 75vw;
+        max-height: 70dvh;
+    }
+
+    .mobile-controls {
+        position: fixed;
+        inset: 0;
+
+        justify-content: space-between;
+        align-items: center;
+
+        padding: 16px;
+
+        pointer-events: none;
+    }
+
+    .control-button {
+        width: 90px;
+        min-height: 90px;
+
+        opacity: 0.75;
+        pointer-events: auto;
+    }
+
+    .instructions {
+        display: none;
+    }
+}
